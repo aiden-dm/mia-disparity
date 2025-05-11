@@ -78,7 +78,7 @@
     where the [seed] is the seed of that instance.
  
  to launch multiple instances at one time:
- ```bash
+      ```bash
     bash run_multi_seed.sh {0..5}
     ```
     0..5 is the range of the seeds you want to run.
