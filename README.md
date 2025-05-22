@@ -1,12 +1,15 @@
 # Membership Inference Attacks as Privacy Tools: Reliability, Disparity and Ensemble
 
- This is a repository for the paper "Membership Inference Attacks as Privacy Tools: Reliability, Disparity and Ensemble", accepted by ACM CCS 2025. This is a cleaned-up version of our MIAE framework repository to contain only essential scripts for reproducing results in this paper. Main scripts are in the [experiment/mia_comp](experiment/mia_comp) directory.
+[![DOI](https://zenodo.org/badge/975807660.svg)](https://doi.org/10.5281/zenodo.15384862)
+
+ This is a repository for the paper "Membership Inference Attacks as Privacy Tools: Reliability, Disparity and Ensemble", accepted by ACM CCS 2025. This is a cleaned-up version of our MIAE framework repository to contain only essential scripts for reproducing results in this paper. Main scripts are in the [experiment/mia_comp](experiment/mia_comp) directory. Our paper is available at [paper.pdf](./Membership_Inference_Attacks__Reliability__Disparity_and_Ensemble__CCS2025.pdf).
 
  Note that throughout this repo, we refer coverage and stability (2 definition defined in the paper) as union and intersection respectively. We also refer instances and seeds, since each instance is `prepared` with a different seed.
- 
- 
+
+
+
  ## Table of Contents
- 
+
 - [Membership Inference Attacks as Privacy Tools: Reliability, Disparity and Ensemble](#membership-inference-attacks-as-privacy-tools-reliability-disparity-and-ensemble)
   - [Table of Contents](#table-of-contents)
   - [Abstract](#abstract)
@@ -29,15 +32,14 @@
  
  > Membership inference attacks (MIAs) pose a significant threat to the privacy of machine learning models and are widely used as tools for privacy assessment, auditing, and machine unlearning. While prior MIA research has primarily focused on performance metrics such as AUC, accuracy, and TPR@low FPR—either by developing new methods to enhance these metrics or using them to evaluate privacy solutions—we found that it overlooks the disparities among different attacks. These disparities, both between distinct attack methods and between multiple instantiations of the same method, have crucial implications for the reliability and completeness of MIAs as privacy evaluation tools. In this paper, we systematically investigate these disparities through a novel framework based on coverage and stability analysis. Extensive experiments reveal significant disparities in MIAs, their potential causes, and their broader implications for privacy evaluation.
  To address these challenges, we propose an ensemble framework with three distinct strategies to harness the strengths of state-of-the-art MIAs while accounting for their disparities. This framework not only enables the construction of more powerful attacks but also provides a more robust and comprehensive methodology for privacy evaluation.
- 
- 
- 
- 
- ⚠️ **NOTE**: To be able to set up the directory correctly, please replace the `DATA_DIR` in all the scripts with the path to the directory where you want to store the attack predictions and results. We also recommend to run all scripts (especially those bash script) in the `miae/experiment/mia_comp` directory. 
- 
+
+
+
+ ⚠️ **NOTE**: To be able to set up the directory correctly, please replace the `DATA_DIR` in all the scripts with the path to the directory where you want to store the attack predictions and results. We also recommend to run all scripts (especially those bash script) in the `miae/experiment/mia_comp` directory.
+
  ⚠️ **NOTE**: Most bash scripts has different config set by commenting/uncommenting the lines. For example, in `experiment_scripts/obtain_venn.sh`, you can set the config of the venn diagram by commenting and uncommenting the lines. The same applies to other bash scripts.
- 
- 
+
+
  ## Set up the environment
  ```bash
  conda env create -f miae_env.yml
@@ -53,6 +55,8 @@
  
  -------------------
  ## Preparing Predictions of Multi-instances MIAs
+
+ 
  
  
  ### `obtain_pred.py`
@@ -63,6 +67,10 @@
  4. Prepare the specified MIAs with the (black box access) target model and the auxiliary dataset.
  5. Save the prediction on the target dataset.
  
+**Workflow diagram:**  
+![obtain_pred_fpr_workflow](./obtain_pred_fpr_workflow.png)
+
+
  This file is being called by `experiment_script/prepare_target.sh` to prepare and save the target model and datasets. And it's also called by `experiment_scripts/obtain_pred.sh` to run the experiments.
  
  Usage:
@@ -84,7 +92,7 @@
     0..5 is the range of the seeds you want to run.
  
  -------------------
- ## Comparing MIAs
+  ## Comparing MIAs
  
  ### `obtain_graph.py`
  The `obtain_graph.py` script is designed to load data, generate various plots, and evaluate metrics. 
