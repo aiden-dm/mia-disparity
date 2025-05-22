@@ -2,7 +2,7 @@
 
 [![DOI](https://zenodo.org/badge/975807660.svg)](https://doi.org/10.5281/zenodo.15384862)
 
- This is a repository for the paper "Membership Inference Attacks as Privacy Tools: Reliability, Disparity and Ensemble", accepted by ACM CCS 2025. This is a cleaned-up version of our MIAE framework repository to contain only essential scripts for reproducing results in this paper. Main scripts are in the [experiment/mia_comp](experiment/mia_comp) directory. Our paper is available at [paper.pdf](./Membership_Inference_Attacks__Reliability__Disparity_and_Ensemble__CCS2025.pdf).
+ This is a repository for the paper "Membership Inference Attacks as Privacy Tools: Reliability, Disparity and Ensemble", accepted by ACM CCS 2025. This is a cleaned-up version of our MIAE framework repository to contain only essential scripts for reproducing results in this paper. Main scripts are in the [experiment/mia_comp](experiment/mia_comp) directory. Our paper is available at [paper.pdf](./paper.pdf).
 
  Note that throughout this repo, we refer coverage and stability (2 definition defined in the paper) as union and intersection respectively. We also refer instances and seeds, since each instance is `prepared` with a different seed.
 
@@ -151,4 +151,4 @@
  
  ### `disparity_empirical_analysis.ipynb`
  
- THis notebook is designed to analyze the disparity of MIAs in the empirical study. Corresponding to the paper's *Output Distribution of A-Unique Samples*.
+ This notebook is designed to analyze the disparity of MIAs in the empirical study. Corresponding to the paper's *Output Distribution of A-Unique Samples*.
