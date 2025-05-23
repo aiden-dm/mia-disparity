@@ -1,6 +1,6 @@
 # Membership Inference Attacks as Privacy Tools: Reliability, Disparity and Ensemble
 
-[![DOI](https://zenodo.org/badge/975807660.svg)](https://doi.org/10.5281/zenodo.15384862)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15491989.svg)](https://doi.org/10.5281/zenodo.15491989)
 
  This is a repository for the paper "Membership Inference Attacks as Privacy Tools: Reliability, Disparity and Ensemble", accepted by ACM CCS 2025. This is a cleaned-up version of our MIAE framework repository to contain only essential scripts for reproducing results in this paper. Main scripts are in the [experiment/mia_comp](experiment/mia_comp) directory. Our paper is available at [paper.pdf](./paper.pdf).
 
